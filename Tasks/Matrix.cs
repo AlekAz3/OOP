@@ -15,7 +15,7 @@ namespace Tasks
         public Matrix(int n, int m)
         {
             if (n < 0 || m < 0)
-                throw new ArgumentException();
+                throw new ArgumentException("Значение меньше 0");
             else
             {
                 this.n = n;
@@ -30,6 +30,13 @@ namespace Tasks
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
                     matrix[i, j] = random.Next(10, 99);
+        }
+
+        public void SetValueInMatrix(int n, int m, int value) 
+        {
+            if (n < 0 || m < 0)
+                throw new ArgumentException("Значение меньше нуля");
+            matrix[n, m] = value;
         }
 
         public int[,] TranspositionMatrix()

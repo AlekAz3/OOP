@@ -21,6 +21,7 @@ namespace Tasks
         }
 
         public double FindDistance(Point point) => Math.Sqrt(Math.Pow(point.X-this.X, 2) + Math.Pow(point.Y - this.Y, 2));
-        
+        public static double FindDistance(Point firstPoint, Point secondPoint) => Math.Sqrt(Math.Pow(firstPoint.X - secondPoint.X, 2) + Math.Pow(firstPoint.Y - secondPoint.Y, 2));
+
     }
 }
