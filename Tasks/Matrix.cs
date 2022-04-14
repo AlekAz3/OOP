@@ -12,6 +12,9 @@ namespace Tasks
         private int m;
         private int[,] matrix;
 
+        public int N { get { return n; } }
+        public int M { get { return m; } }
+
         public Matrix(int n, int m)
         {
             if (n < 0 || m < 0)
@@ -56,6 +59,21 @@ namespace Tasks
                     Console.Write($"{matrix[i,j]} ");
                 Console.WriteLine();
             }
+        }
+
+        public void MultiplicationMatrix(Matrix matrixx)
+        {
+            if (this.N != matrixx.M)
+                throw new ArgumentException("число столбцов матрицы А не равно числу строк матрицы В");
+
+            int[,] temp_matrix= new int[n, matrixx.M];
+            
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < matrixx.M; j++)
+                    for (int k = 0; k < matrixx.N; k++)
+                        temp_matrix[i, j] += this.matrix[i, k] * matrix[k, j];
+            
+            this.matrix = temp_matrix;
         }
 
         public static void WriteMatrixToConsole(int[,] matrix)
