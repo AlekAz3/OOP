@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tasks
 {
-    internal class Matrix
+    public class Matrix
     {
         private int n;
         private int m;

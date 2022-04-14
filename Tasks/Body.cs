@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tasks
 {
-    internal class Body
+    public class Body
     {
         private decimal weight;
         private decimal speed;
