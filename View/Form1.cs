@@ -26,8 +26,16 @@ namespace View
         // Матрица
         private Matrix matrix1;
         private Matrix matrix2;
-        private Matrix matrix3;
 
+        //Третье
+        private Label label1T;
+        private Label label2T;
+        private Label RezultLabelT;
+        private TextBox W1TextBoxT;
+        private TextBox S1TextBoxT;
+        private TextBox W2TextBoxT;
+        private TextBox S2TextBoxT;
+        private Button ShowResultBtnT;
 
         public Form1()
         {
@@ -151,6 +159,124 @@ namespace View
         }
 
 
+        private void ShowThird()
+        {
+            // 
+            // label1T
+            // 
+            this.label1T = new Label();
+            this.label1T.AutoSize = true;
+            this.label1T.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1T.Location = new System.Drawing.Point(13, 58);
+            this.label1T.Name = "label1T";
+            this.label1T.Size = new System.Drawing.Size(192, 18);
+            this.label1T.TabIndex = 1;
+            this.label1T.Text = "Масса и Скорость первого тела";
+            // 
+            // W1TextBoxT
+            // 
+            this.W1TextBoxT = new TextBox();
+            this.W1TextBoxT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.W1TextBoxT.Location = new System.Drawing.Point(252, 55);
+            this.W1TextBoxT.Name = "W1TextBoxT";
+            this.W1TextBoxT.Size = new System.Drawing.Size(57, 24);
+            this.W1TextBoxT.TabIndex = 2;
+            // 
+            // S1TextBoxT
+            // 
+            this.S1TextBoxT = new TextBox();
+            this.S1TextBoxT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.S1TextBoxT.Location = new System.Drawing.Point(325, 55);
+            this.S1TextBoxT.Name = "S1TextBoxT";
+            this.S1TextBoxT.Size = new System.Drawing.Size(57, 24);
+            this.S1TextBoxT.TabIndex = 2;
+            // 
+            // label2T
+            // 
+            this.label2T = new Label();
+            this.label2T.AutoSize = true;
+            this.label2T.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2T.Location = new System.Drawing.Point(12, 92);
+            this.label2T.Name = "label2T";
+            this.label2T.Size = new System.Drawing.Size(192, 18);
+            this.label2T.TabIndex = 1;
+            this.label2T.Text = "Масса и Скорость второго тела";
+            // 
+            // W2TextBoxT
+            // 
+            this.W2TextBoxT = new TextBox();
+            this.W2TextBoxT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.W2TextBoxT.Location = new System.Drawing.Point(252, 89);
+            this.W2TextBoxT.Name = "W2TextBoxT";
+            this.W2TextBoxT.Size = new System.Drawing.Size(57, 24);
+            this.W2TextBoxT.TabIndex = 2;
+            // 
+            // S2TextBoxT
+            // 
+            this.S2TextBoxT = new TextBox();
+            this.S2TextBoxT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.S2TextBoxT.Location = new System.Drawing.Point(325, 89);
+            this.S2TextBoxT.Name = "S2TextBoxT";
+            this.S2TextBoxT.Size = new System.Drawing.Size(57, 24);
+            this.S2TextBoxT.TabIndex = 2;
+            // 
+            // ShowResultBtnT
+            // 
+            this.ShowResultBtnT = new Button();
+            this.ShowResultBtnT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ShowResultBtnT.Location = new System.Drawing.Point(13, 124);
+            this.ShowResultBtnT.Name = "ShowResultBtnT";
+            this.ShowResultBtnT.Size = new System.Drawing.Size(192, 38);
+            this.ShowResultBtnT.TabIndex = 3;
+            this.ShowResultBtnT.Text = "Рассчитать";
+            this.ShowResultBtnT.UseVisualStyleBackColor = true;
+            this.ShowResultBtnT.Click += new System.EventHandler(this.ThirdResultButton_Click);
+            // 
+            // RezultLabelT
+            // 
+            this.RezultLabelT = new Label();
+            this.RezultLabelT.AutoSize = true;
+            this.RezultLabelT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RezultLabelT.Location = new System.Drawing.Point(13, 184);
+            this.RezultLabelT.Name = "RezultLabelT";
+            this.RezultLabelT.Size = new System.Drawing.Size(0, 25);
+            this.RezultLabelT.TabIndex = 1;
+
+
+            this.Controls.Add(this.label1T);
+            this.Controls.Add(this.label2T);
+            this.Controls.Add(this.RezultLabelT);
+
+            this.Controls.Add(this.W1TextBoxT);
+            this.Controls.Add(this.S1TextBoxT);
+            this.Controls.Add(this.W2TextBoxT);
+            this.Controls.Add(this.S2TextBoxT);
+            this.Controls.Add(this.ShowResultBtnT);
+        }
+
+        private void ThirdResultButton_Click(object sender, EventArgs e)
+        {
+            Tasks.Body body1 = new Tasks.Body(Convert.ToDecimal(W1TextBoxT.Text), Convert.ToDecimal(S1TextBoxT.Text));
+            Tasks.Body body2 = new Tasks.Body(Convert.ToDecimal(W2TextBoxT.Text), Convert.ToDecimal(S2TextBoxT.Text));
+            RezultLabelT.Text = $"Тело 1: {body1.FindKineticEnergy()}{"\n"}Тело 2: {body2.FindKineticEnergy()}";
+        }
+
+        private void HideThird()
+        {
+            if (label1T == null)
+                return;
+
+            label1T.Dispose();
+            label2T.Dispose();
+            RezultLabelT.Dispose();
+            W1TextBoxT.Dispose();
+            S1TextBoxT.Dispose();
+            W2TextBoxT.Dispose();
+            S2TextBoxT.Dispose();
+            ShowResultBtnT.Dispose();
+        }
+
+
         private void ShowSecond() 
         {
             dataGridView1.Show();
@@ -165,7 +291,6 @@ namespace View
             Arr1NTextBox.Show();
             Arr2NTextBox.Show();
             Arr2MTextBox.Show();
-
         }
 
         private void HideSecond()
@@ -176,6 +301,8 @@ namespace View
             acs.Hide();
             do_button.Hide();
             FillButton.Hide();
+            label3.Hide();
+            label4.Hide();
             Arr1MTextBox.Hide();
             Arr1NTextBox.Hide();
             Arr2NTextBox.Hide();
@@ -207,27 +334,50 @@ namespace View
             {
                 case 0:
                     ShowFirst();
+                    HideThird();
                     HideSecond();
                     break;
                 case 1:
                     HideFirst();
                     HideSecond();
+                    HideThird();
                     break;
                 case 2:
                     HideFirst();
+                    ShowThird();
                     HideSecond();
                     break;
                 case 3:
                     HideFirst();
+                    HideThird();
                     ShowSecond();
                     break;
-
+               
             }
         }
 
+
         private void FillButton_Click(object sender, EventArgs e)
         {
+            matrix1 = new Matrix(Convert.ToInt32(Arr1NTextBox.Text), Convert.ToInt32(Arr1MTextBox.Text));
+            matrix2 = new Matrix(Convert.ToInt32(Arr2NTextBox.Text), Convert.ToInt32(Arr2MTextBox.Text));
+            matrix1.FillMatrixRandom(DateTime.Now.Millisecond);
+            matrix2.FillMatrixRandom(DateTime.Now.Second);
+            WriteData(dataGridView1, matrix1);
+            System.Threading.Thread.Sleep(3);
+            WriteData(dataGridView2, matrix2);
+        }
 
+        private void do_button_Click(object sender, EventArgs e)
+        {
+            if (acs.SelectedIndex == 1)
+            {
+                WriteData(dataGridView3, matrix1.MultiplicationMatrix(matrix2));
+            }
+            else if (acs.SelectedIndex == 0)
+            {
+                WriteData(dataGridView3, matrix1.Additionmatrix(matrix2));
+            }
         }
     }
 }

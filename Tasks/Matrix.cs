@@ -37,6 +37,14 @@ namespace Tasks
                     matrix[i, j] = random.Next(0, 10);
         }
 
+        public void FillMatrixRandom(int Seed)
+        {
+            Random random = new Random(Seed);
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < m; j++)
+                    matrix[i, j] = random.Next(0, 10);
+        }
+
         public void SetValueInMatrix(int n, int m, int value) 
         {
             if (n < 0 || m < 0)
@@ -63,34 +71,36 @@ namespace Tasks
             }
         }
 
-        public int[,] MultiplicationMatrix(Matrix matrixx)
+        public Matrix MultiplicationMatrix(Matrix matrixx)
         {
             if (this.N != matrixx.M)
                 throw new ArgumentException("Низя");
 
-            int[,] temp_matrix= new int[n, matrixx.M];
+            Matrix temp = new Matrix(N, matrixx.M);
+
             
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < matrixx.M; j++)
                     for (int k = 0; k < matrixx.N; k++)
-                        temp_matrix[i, j] += this.matrix[i, k] * matrixx.Matrixx[k, j];
+                        temp.matrix[i, j] += this.matrix[i, k] * matrixx.Matrixx[k, j];
             
-            return temp_matrix;
+            return temp;
         }
 
-        public int[,] Additionmatrix(Matrix matrixx)
+
+        public Matrix Additionmatrix(Matrix matrixx)
         {
             if (this.N != matrixx.N && this.M != matrixx.M)
                 throw new ArgumentException("Низя");
-            int[,] temp_matrix = new int[n, m];
+            Matrix temp_matrix = new Matrix(n, m);
 
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
-                    temp_matrix[i, j] = this.matrix[i, j] + matrixx.Matrixx[i, j];
+                    temp_matrix.matrix[i, j] = this.matrix[i, j] + matrixx.Matrixx[i, j];
 
             return temp_matrix;
-                    
-        } 
+
+        }
 
 
         public static void WriteMatrixToConsole(int[,] matrix)

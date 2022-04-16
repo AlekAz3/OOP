@@ -66,8 +66,9 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 82);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 121);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(300, 300);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -75,8 +76,9 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(350, 82);
+            this.dataGridView2.Location = new System.Drawing.Point(350, 121);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(300, 300);
             this.dataGridView2.TabIndex = 1;
             // 
@@ -84,8 +86,9 @@
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(679, 82);
+            this.dataGridView3.Location = new System.Drawing.Point(679, 121);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.Size = new System.Drawing.Size(300, 300);
             this.dataGridView3.TabIndex = 1;
             // 
@@ -97,6 +100,7 @@
             this.do_button.TabIndex = 2;
             this.do_button.Text = "Выполнить ";
             this.do_button.UseVisualStyleBackColor = true;
+            this.do_button.Click += new System.EventHandler(this.do_button_Click);
             // 
             // acs
             // 
@@ -124,7 +128,7 @@
             // Arr1NTextBox
             // 
             this.Arr1NTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Arr1NTextBox.Location = new System.Drawing.Point(119, 389);
+            this.Arr1NTextBox.Location = new System.Drawing.Point(128, 87);
             this.Arr1NTextBox.Name = "Arr1NTextBox";
             this.Arr1NTextBox.Size = new System.Drawing.Size(30, 24);
             this.Arr1NTextBox.TabIndex = 4;
@@ -132,7 +136,7 @@
             // Arr1MTextBox
             // 
             this.Arr1MTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Arr1MTextBox.Location = new System.Drawing.Point(155, 389);
+            this.Arr1MTextBox.Location = new System.Drawing.Point(164, 87);
             this.Arr1MTextBox.Name = "Arr1MTextBox";
             this.Arr1MTextBox.Size = new System.Drawing.Size(30, 24);
             this.Arr1MTextBox.TabIndex = 4;
@@ -141,7 +145,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 393);
+            this.label3.Location = new System.Drawing.Point(21, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 18);
             this.label3.TabIndex = 5;
@@ -150,7 +154,7 @@
             // Arr2NTextBox
             // 
             this.Arr2NTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Arr2NTextBox.Location = new System.Drawing.Point(454, 391);
+            this.Arr2NTextBox.Location = new System.Drawing.Point(463, 89);
             this.Arr2NTextBox.Name = "Arr2NTextBox";
             this.Arr2NTextBox.Size = new System.Drawing.Size(30, 24);
             this.Arr2NTextBox.TabIndex = 4;
@@ -158,7 +162,7 @@
             // Arr2MTextBox
             // 
             this.Arr2MTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Arr2MTextBox.Location = new System.Drawing.Point(490, 391);
+            this.Arr2MTextBox.Location = new System.Drawing.Point(499, 89);
             this.Arr2MTextBox.Name = "Arr2MTextBox";
             this.Arr2MTextBox.Size = new System.Drawing.Size(30, 24);
             this.Arr2MTextBox.TabIndex = 4;
@@ -167,7 +171,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(347, 395);
+            this.label4.Location = new System.Drawing.Point(356, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 18);
             this.label4.TabIndex = 5;
